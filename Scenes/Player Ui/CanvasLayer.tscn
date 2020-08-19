@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/Player Ui/Energybar.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sprite/PlayerUi/EnergyBar.png" type="Texture" id=3]
+[ext_resource path="res://Sprite/PlayerUi/EnergyBarEmptyt.png" type="Texture" id=4]
+[ext_resource path="res://Sprite/PlayerUi/Wings.png" type="Texture" id=5]
+[ext_resource path="res://bg_16x9.png" type="Texture" id=6]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+layer = -99
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 1030.95, 716.078 )
+scale = Vector2( 130.102, 159.629 )
+z_index = -2
+texture = ExtResource( 6 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 182.0
+margin_bottom = 32.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="TextureRect" parent="HBoxContainer"]
+margin_right = 32.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+texture = ExtResource( 5 )
+expand = true
+
+[node name="TextureProgress" parent="." instance=ExtResource( 2 )]
+margin_left = 39.0
+margin_top = 4.0
+margin_right = 183.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 0, 25 )
+size_flags_horizontal = 3
+texture_under = ExtResource( 3 )
+texture_progress = ExtResource( 4 )

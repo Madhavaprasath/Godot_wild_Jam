@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/Players/Ptero.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Maps/Map.tres" type="TileSet" id=2]
+[ext_resource path="res://Scenes/Player Ui/CanvasLayer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Players/frend.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Objects/Doors.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Script/Door test.gd" type="Script" id=6]
+
+[node name="Door test" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+format = 1
+tile_data = PoolIntArray( 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0, 393229, 0, 0, 393230, 0, 0, 393231, 0, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0, 524300, 0, 0, 524301, 0, 0, 524302, 0, 0, 524303, 0, 0 )
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 3 )]
+
+[node name="Ptero" parent="." instance=ExtResource( 1 )]
+position = Vector2( 104.882, 343.112 )
+
+[node name="frend" parent="." instance=ExtResource( 4 )]
+position = Vector2( 738.665, 356.597 )
+
+[node name="Doors" parent="." instance=ExtResource( 5 )]
+petro1 = NodePath("../Ptero")
+frend1 = NodePath("../frend")
+
+[node name="Area2D" parent="Doors" index="0"]
+position = Vector2( 663.375, 319.902 )
+
+[node name="Area2D2" parent="Doors" index="1"]
+position = Vector2( 193.411, 314.289 )
+
+[editable path="Doors"]
