@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/Players/Ptero.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Maps/Map.tres" type="TileSet" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://Scenes/Players/frend.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Objects/Gate.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Objects/Platform_contoller.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/Objects/Platformfinal.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Objects/platform_lever.tscn" type="PackedScene" id=9]
 
 [node name="Test" type="Node2D"]
@@ -49,15 +48,12 @@ Frend = NodePath("../../../frend")
 
 [node name="Platform_contoller" parent="." instance=ExtResource( 7 )]
 
-[node name="platform_lever" parent="Platform_contoller/platforms" index="0" groups=[
-"leverplatform",
-] instance=ExtResource( 8 )]
-position = Vector2( 709.191, 417.356 )
+[node name="platform_lever" parent="Platform_contoller/platforms" index="0"]
+position = Vector2( 798.463, 344.466 )
+platformpar1 = NodePath("../..")
 
-[node name="platform_lever" parent="Platform_contoller/lever" index="0" instance=ExtResource( 9 )]
-position = Vector2( 391.172, 288.225 )
-Petro = NodePath("../../../Ptero")
-Frend = NodePath("../../../frend")
+[node name="platform_lever" parent="Platform_contoller/platforlevers" index="0" instance=ExtResource( 9 )]
+position = Vector2( 379.389, 287.32 )
 
 [editable path="frend"]
 

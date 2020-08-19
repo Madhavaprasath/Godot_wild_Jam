@@ -4,6 +4,8 @@ onready var platform=get_node("platform")
 onready var tween=get_node("Tween")
 
 const IDLE_DURATION=1.0
+export (NodePath)var platformpar1
+onready var platformpar=get_node(platformpar1)
 
 export (bool) var iscontroledbylever=false
 export var speed=3.0

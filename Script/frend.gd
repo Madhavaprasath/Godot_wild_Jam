@@ -30,7 +30,7 @@ func _physics_process(delta):
 	move()
 	slide_object()
 	velocity.y+= gravity*delta
-	velocity=move_and_slide(velocity,Vector2.UP,false,4,PI/4,false)
+	velocity=move_and_slide_with_snap(velocity,Vector2.DOWN*32,Vector2.UP,false,4,PI/4,false)
 	if velocity.y>0:
 		animation_player.play("Fall")
 	if velocity.y<0:
@@ -55,6 +55,3 @@ func checkcast():
 		
 		return false
 
-
-func _on_Area2D_body_exited(body):
-	set_collision_mask_bit(1,true)
