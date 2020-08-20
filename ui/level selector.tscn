@@ -1,0 +1,236 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://ui/theme1bit.tres" type="Theme" id=1]
+[ext_resource path="res://ui/play_16x16.png" type="Texture" id=2]
+[ext_resource path="res://ui/Rowdies/Rowdies-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://ui/font.tres" type="DynamicFont" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 3 )
+
+[node name="level selector" type="PanelContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+margin_right = 1087.0
+margin_bottom = 600.0
+scroll_horizontal_enabled = false
+
+[node name="Control" type="VBoxContainer" parent="ScrollContainer"]
+margin_right = 1075.0
+margin_bottom = 666.0
+
+[node name="lvl1" type="PanelContainer" parent="ScrollContainer/Control"]
+margin_right = 1075.0
+margin_bottom = 63.0
+
+[node name="Button" type="Button" parent="ScrollContainer/Control/lvl1"]
+margin_right = 1075.0
+margin_bottom = 63.0
+custom_fonts/font = ExtResource( 4 )
+icon = ExtResource( 2 )
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ScrollContainer/Control/lvl1"]
+margin_right = 1075.0
+margin_bottom = 63.0
+custom_fonts/font = SubResource( 1 )
+text = "                  play                                            lvl1          "
+
+[node name="lvl2" type="PanelContainer" parent="ScrollContainer/Control"]
+margin_top = 67.0
+margin_right = 1075.0
+margin_bottom = 130.0
+
+[node name="Button" type="Button" parent="ScrollContainer/Control/lvl2"]
+margin_right = 1075.0
+margin_bottom = 63.0
+custom_fonts/font = ExtResource( 4 )
+icon = ExtResource( 2 )
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ScrollContainer/Control/lvl2"]
+margin_right = 1075.0
+margin_bottom = 63.0
+custom_fonts/font = SubResource( 1 )
+text = "                  play                                            lvl2          "
+
+[node name="lvl3" type="PanelContainer" parent="ScrollContainer/Control"]
+margin_top = 134.0
+margin_right = 1075.0
+margin_bottom = 197.0
+
+[node name="Button" type="Button" parent="ScrollContainer/Control/lvl3"]
+margin_right = 1075.0
+margin_bottom = 63.0
+custom_fonts/font = ExtResource( 4 )
+icon = ExtResource( 2 )
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ScrollContainer/Control/lvl3"]
+margin_right = 1075.0
+margin_bottom = 63.0
+custom_fonts/font = SubResource( 1 )
+text = "                  play                                            lvl3          "
+
+[node name="lvl4" type="PanelContainer" parent="ScrollContainer/Control"]
+margin_top = 201.0
+margin_right = 1075.0
+margin_bottom = 264.0
+
+[node name="Button" type="Button" parent="ScrollContainer/Control/lvl4"]
+margin_right = 1075.0
+margin_bottom = 63.0
+custom_fonts/font = ExtResource( 4 )
+icon = ExtResource( 2 )
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ScrollContainer/Control/lvl4"]
+margin_right = 1075.0
+margin_bottom = 63.0
+custom_fonts/font = SubResource( 1 )
+text = "                  play                                            lvl4          "
+
+[node name="lvl5" type="PanelContainer" parent="ScrollContainer/Control"]
+margin_top = 268.0
+margin_right = 1075.0
+margin_bottom = 331.0
+
+[node name="Button" type="Button" parent="ScrollContainer/Control/lvl5"]
+margin_right = 1075.0
+margin_bottom = 63.0
+custom_fonts/font = ExtResource( 4 )
+icon = ExtResource( 2 )
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ScrollContainer/Control/lvl5"]
+margin_right = 1075.0
+margin_bottom = 63.0
+custom_fonts/font = SubResource( 1 )
+text = "                  play                                            lvl5          "
+
+[node name="lvl6" type="PanelContainer" parent="ScrollContainer/Control"]
+margin_top = 335.0
+margin_right = 1075.0
+margin_bottom = 398.0
+
+[node name="Button" type="Button" parent="ScrollContainer/Control/lvl6"]
+margin_right = 1075.0
+margin_bottom = 63.0
+custom_fonts/font = ExtResource( 4 )
+icon = ExtResource( 2 )
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ScrollContainer/Control/lvl6"]
+margin_right = 1075.0
+margin_bottom = 63.0
+custom_fonts/font = SubResource( 1 )
+text = "                  play                                            lvl6          "
+
+[node name="lvl7" type="PanelContainer" parent="ScrollContainer/Control"]
+margin_top = 402.0
+margin_right = 1075.0
+margin_bottom = 465.0
+
+[node name="Button" type="Button" parent="ScrollContainer/Control/lvl7"]
+margin_right = 1075.0
+margin_bottom = 63.0
+custom_fonts/font = ExtResource( 4 )
+icon = ExtResource( 2 )
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ScrollContainer/Control/lvl7"]
+margin_right = 1075.0
+margin_bottom = 63.0
+custom_fonts/font = SubResource( 1 )
+text = "                  play                                            lvl7          "
+
+[node name="lvl8" type="PanelContainer" parent="ScrollContainer/Control"]
+margin_top = 469.0
+margin_right = 1075.0
+margin_bottom = 532.0
+
+[node name="Button" type="Button" parent="ScrollContainer/Control/lvl8"]
+margin_right = 1075.0
+margin_bottom = 63.0
+custom_fonts/font = ExtResource( 4 )
+icon = ExtResource( 2 )
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ScrollContainer/Control/lvl8"]
+margin_right = 1075.0
+margin_bottom = 63.0
+custom_fonts/font = SubResource( 1 )
+text = "                  play                                            lvl8          "
+
+[node name="lvl9" type="PanelContainer" parent="ScrollContainer/Control"]
+margin_top = 536.0
+margin_right = 1075.0
+margin_bottom = 599.0
+
+[node name="Button" type="Button" parent="ScrollContainer/Control/lvl9"]
+margin_right = 1075.0
+margin_bottom = 63.0
+custom_fonts/font = ExtResource( 4 )
+icon = ExtResource( 2 )
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ScrollContainer/Control/lvl9"]
+margin_right = 1075.0
+margin_bottom = 63.0
+custom_fonts/font = SubResource( 1 )
+text = "                  play                                            lvl9          "
+
+[node name="lvl10" type="PanelContainer" parent="ScrollContainer/Control"]
+margin_top = 603.0
+margin_right = 1075.0
+margin_bottom = 666.0
+
+[node name="Button" type="Button" parent="ScrollContainer/Control/lvl10"]
+margin_right = 1075.0
+margin_bottom = 63.0
+custom_fonts/font = ExtResource( 4 )
+icon = ExtResource( 2 )
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ScrollContainer/Control/lvl10"]
+margin_right = 1075.0
+margin_bottom = 63.0
+custom_fonts/font = SubResource( 1 )
+text = "                  play                                            lvl10          "

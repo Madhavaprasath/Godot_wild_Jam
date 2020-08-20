@@ -1,0 +1,146 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://ui/theme1bit.tres" type="Theme" id=1]
+[ext_resource path="res://ui/button_theme.tres" type="Theme" id=2]
+[ext_resource path="res://ui/Rowdies/Rowdies-Light.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://ui/code/MainMenu.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 100
+font_data = ExtResource( 3 )
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bar" type="PanelContainer" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -229.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="bar"]
+margin_right = 1024.0
+margin_bottom = 229.0
+
+[node name="play" type="Button" parent="bar/Control"]
+margin_left = 258.938
+margin_top = 15.5775
+margin_right = 455.938
+margin_bottom = 67.5775
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 1 )
+text = "play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="about" type="Button" parent="bar/Control"]
+margin_left = 533.071
+margin_top = 15.5775
+margin_right = 730.071
+margin_bottom = 67.5775
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 1 )
+text = "about"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="tutorial" type="Button" parent="bar/Control"]
+margin_left = 260.498
+margin_top = 82.3932
+margin_right = 457.498
+margin_bottom = 134.393
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 1 )
+text = "tutorial"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="exit" type="Button" parent="bar/Control"]
+margin_left = 259.134
+margin_top = 150.472
+margin_right = 456.134
+margin_bottom = 202.472
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 1 )
+text = "exit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="copyright" type="Label" parent="bar/Control"]
+margin_left = 796.0
+margin_top = 202.0
+margin_right = 1012.0
+margin_bottom = 216.0
+text = "Copyright 2020 all rights reserved "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -175.782
+margin_top = -212.171
+margin_right = 172.218
+margin_bottom = -87.171
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Game"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="abouth" type="WindowDialog" parent="."]
+margin_left = 338.0
+margin_top = 129.0
+margin_right = 738.0
+margin_bottom = 402.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="abouth"]
+margin_left = 4.20453
+margin_top = 1.68179
+margin_right = 397.205
+margin_bottom = 270.682
+text = "                                             GAME
+is a game made by 
+	arydev,
+	JuanLr,
+	Jiku and 
+	Madhavaprasath
+
+Game is a puzle platformer game made in a week in GodotEngine
+for the GodotWildJam out 2 years
+is a game about a dinosaur mom and a son
+it uses 1bit graphichs 
+
+arydev ui
+Madhavaprasath programing
+juanLr art
+jiku music
+"
+[connection signal="pressed" from="bar/Control/about" to="." method="_on_about_pressed"]
