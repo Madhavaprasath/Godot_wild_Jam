@@ -76,7 +76,7 @@ height = 14.0497
 
 [node name="Ptero" type="KinematicBody2D"]
 collision_layer = 4
-collision_mask = 31
+collision_mask = 27
 script = ExtResource( 2 )
 
 [node name="Dino" type="Node2D" parent="."]

@@ -6,57 +6,66 @@
 [ext_resource path="res://Scenes/Objects/Lever.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Players/frend.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Objects/Gate.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/Objects/Platform_contoller.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/Objects/platform_lever.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Objects/Platformfinal.tscn" type="PackedScene" id=7]
+[ext_resource path="res://falling_platform.tscn" type="PackedScene" id=8]
 
 [node name="Test" type="Node2D"]
 
 [node name="CanvasLayer" parent="." instance=ExtResource( 3 )]
 
 [node name="TileMap" type="TileMap" parent="."]
+scale = Vector2( 0.5, 0.5 )
 tile_set = ExtResource( 2 )
 format = 1
-tile_data = PoolIntArray( 327685, 0, 0, 327686, 1, 0, 327687, 1, 0, 327688, 2, 0, 458752, 3, 0, 458753, 3, 0, 458754, 3, 0, 458755, 3, 0, 458756, 3, 0, 458757, 3, 0, 458758, 3, 0, 458759, 3, 0, 458760, 3, 0, 458761, 3, 0, 458762, 3, 0, 458763, 3, 0, 458764, 3, 0, 458765, 3, 0, 458766, 3, 0, 458767, 3, 0 )
-
-[node name="Ptero" parent="." groups=[
-"Player",
-] instance=ExtResource( 1 )]
-position = Vector2( 114.993, 405.294 )
-
-[node name="frend" parent="." groups=[
-"Player",
-] instance=ExtResource( 5 )]
-position = Vector2( 499.924, 294.32 )
-z_index = -1
-
-[node name="Sprite" parent="frend/frendBody" index="1"]
-frame = 12
-
-[node name="CollisionShape2D" parent="frend" index="1"]
-position = Vector2( 0.7638, 1.39908 )
+tile_data = PoolIntArray( 1441792, 0, 0, 1441793, 0, 0, 1441794, 0, 0, 1441795, 0, 0, 1441796, 0, 0, 1441797, 0, 0, 1441798, 0, 0, 1441799, 0, 0, 1441800, 0, 0, 1441801, 0, 0, 1441802, 0, 0, 1441803, 0, 0, 1441804, 0, 0, 1441805, 0, 0, 1441806, 0, 0, 1441807, 0, 0, 1441808, 0, 0, 1441809, 0, 0, 1441810, 0, 0, 1441811, 0, 0, 1441812, 0, 0, 1441813, 0, 0, 1441814, 0, 0, 1441815, 0, 0, 1441816, 0, 0, 1441817, 0, 0, 1441818, 0, 0, 1441819, 0, 0, 1441820, 0, 0, 1441821, 0, 0, 1441822, 0, 0, 1441823, 0, 0, 1441824, 0, 0, 1441825, 0, 0, 1441826, 0, 0, 1441827, 0, 0, 1441828, 0, 0, 1441829, 0, 0, 1441830, 0, 0, 1441831, 0, 0 )
 
 [node name="Gate" parent="." instance=ExtResource( 6 )]
-position = Vector2( 543.98, 416.265 )
+position = Vector2( 803.258, 671.902 )
+rotation = 3.14159
+scale = Vector2( 3.2, -3.2 )
 code = "1"
 
+[node name="Sprite2" parent="Gate/sprites and animationplayer" index="0"]
+z_index = 4
+
+[node name="Sprite" parent="Gate/sprites and animationplayer" index="1"]
+z_index = -1
+
+[node name="CollisionShape2D" parent="Gate/StaticBody2D" index="0"]
+position = Vector2( 0.629469, 0.648229 )
+
 [node name="Lever" parent="Gate/levers" index="0" instance=ExtResource( 4 )]
-position = Vector2( -158.865, -19.9675 )
-rotation = 1.57253
-scale = Vector2( 0.3125, 0.3125 )
+position = Vector2( 99.5278, -0.0261993 )
+rotation = 3.14159
+scale = Vector2( 0.3125, -0.3125 )
 Petro = NodePath("../../../Ptero")
 Frend = NodePath("../../../frend")
 
-[node name="Platform_contoller" parent="." instance=ExtResource( 7 )]
+[node name="frend" parent="." instance=ExtResource( 5 )]
+position = Vector2( 164.049, 537.401 )
 
-[node name="platform_lever" parent="Platform_contoller/platforms" index="0"]
-position = Vector2( 798.463, 344.466 )
-platformpar1 = NodePath("../..")
+[node name="Sprite" parent="frend/frendBody" index="1"]
+frame = 19
 
-[node name="platform_lever" parent="Platform_contoller/platforlevers" index="0" instance=ExtResource( 9 )]
-position = Vector2( 379.389, 287.32 )
+[node name="Raycast" parent="frend" index="2"]
+position = Vector2( 0.280617, 2.01108 )
 
-[editable path="frend"]
+[node name="Ptero" parent="." instance=ExtResource( 1 )]
+position = Vector2( 75.5391, 557.2 )
+
+[node name="falling_platform" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1214.36, 572.91 )
+scale = Vector2( 2, 2 )
+collision_mask = 0
+
+[node name="CollisionShape2D" parent="falling_platform" index="1"]
+position = Vector2( 0, -4.86951 )
+
+[node name="Platform" parent="." instance=ExtResource( 7 )]
+position = Vector2( 968.315, 692.107 )
 
 [editable path="Gate"]
 
-[editable path="Platform_contoller"]
+[editable path="frend"]
+
+[editable path="falling_platform"]

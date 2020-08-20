@@ -96,47 +96,23 @@ frame = 15
 position = Vector2( 1.11462, -0.0473852 )
 shape = SubResource( 5 )
 
-[node name="dropthrucast" type="Node2D" parent="."]
+[node name="Raycast" type="Node2D" parent="."]
 
-[node name="RayCast2D" type="RayCast2D" parent="dropthrucast"]
-position = Vector2( -2.05039, 6.0189 )
+[node name="RayCast2D" type="RayCast2D" parent="Raycast"]
+position = Vector2( -2.60138, 6.00099 )
 scale = Vector2( 0.1, 0.1 )
 enabled = true
-cast_to = Vector2( 0, 10 )
-collision_mask = 2
+cast_to = Vector2( 0, 12 )
+collision_mask = 3
 
-[node name="RayCast2D2" type="RayCast2D" parent="dropthrucast"]
-position = Vector2( 0.388, 6.019 )
+[node name="RayCast2D2" type="RayCast2D" parent="Raycast"]
+position = Vector2( 2.598, 6.001 )
 scale = Vector2( 0.1, 0.1 )
 enabled = true
-cast_to = Vector2( 0, 10 )
-collision_mask = 2147483650
+cast_to = Vector2( 0, 12 )
 
-[node name="RayCast2D3" type="RayCast2D" parent="dropthrucast"]
-position = Vector2( 2.787, 6.019 )
+[node name="RayCast2D3" type="RayCast2D" parent="Raycast"]
+position = Vector2( -0.371, 6.001 )
 scale = Vector2( 0.1, 0.1 )
 enabled = true
-cast_to = Vector2( 0, 10 )
-collision_mask = 2147483650
-
-[node name="raycast" type="Node2D" parent="."]
-
-[node name="RayCast2D" type="RayCast2D" parent="raycast"]
-position = Vector2( -2.05039, 6.0189 )
-scale = Vector2( 0.1, 0.1 )
-enabled = true
-cast_to = Vector2( 0, 10 )
-
-[node name="RayCast2D2" type="RayCast2D" parent="raycast"]
-position = Vector2( 0.388, 6.019 )
-scale = Vector2( 0.1, 0.1 )
-enabled = true
-cast_to = Vector2( 0, 10 )
-collision_mask = 2147483649
-
-[node name="RayCast2D3" type="RayCast2D" parent="raycast"]
-position = Vector2( 2.787, 6.019 )
-scale = Vector2( 0.1, 0.1 )
-enabled = true
-cast_to = Vector2( 0, 10 )
-collision_mask = 2147483649
+cast_to = Vector2( 0, 12 )

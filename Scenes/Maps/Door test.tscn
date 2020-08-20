@@ -24,13 +24,17 @@ position = Vector2( 104.882, 343.112 )
 position = Vector2( 738.665, 356.597 )
 
 [node name="Doors" parent="." instance=ExtResource( 5 )]
+z_index = -1
 petro1 = NodePath("../Ptero")
 frend1 = NodePath("../frend")
 
 [node name="Area2D" parent="Doors" index="0"]
-position = Vector2( 663.375, 319.902 )
+position = Vector2( 658.618, 324.659 )
 
 [node name="Area2D2" parent="Doors" index="1"]
-position = Vector2( 193.411, 314.289 )
+position = Vector2( 192.467, 322.784 )
+
+[node name="petrodoor" parent="Doors/Area2D2" index="0"]
+frame = 0
 
 [editable path="Doors"]
