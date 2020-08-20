@@ -11,3 +11,4 @@ func lever_changed():
 func platform_lever_changed():
 	
 	emit_signal("platform_lever_changed")
+	

@@ -27,10 +27,6 @@ Global="*res://Script/Global.gd"
 window/size/width=1280
 window/size/height=900
 
-[editor_plugins]
-
-enabled=PoolStringArray( ".", "ridiculous_coding" )
-
 [importer_defaults]
 
 texture={

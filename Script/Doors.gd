@@ -21,15 +21,15 @@ func _on_Area2D_body_entered(body):
 
 func animation_opened(bodies):
 	if bodies.name=="frend":
-		print("hi")
+		$Area2D/AnimationPlayer.play("Open")
 	if bodies.name=="Ptero":
-		print("hello")
+		$Area2D2/AnimationPlayer.play("open")
 
 func animation_closed(exited_body):
 	if exited_body.name=="frend":
-		print("bye")
+		$Area2D/AnimationPlayer.play("close")
 	if exited_body.name=="Ptero":
-		print("goodBye!!")
+		$Area2D2/AnimationPlayer.play("close")
 	
 func _on_Area2D_body_exited(body):
 	if body.name=="frend":

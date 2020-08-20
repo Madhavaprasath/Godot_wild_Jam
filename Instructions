@@ -1,0 +1,30 @@
+hi this is madhav here this would be guiding you to how to place objects in this game please read this care fully 
+
+first we can start with level each time when use a node 2d to create a level u need to conform apply these things
+*gates
+*lever
+*platform
+*doors
+
+ok try the test file to get ideas about the mechanics
+
+in objects there are 
+			balls
+			doors
+			gate
+			lever
+			object
+			platform
+			and others will be added soon
+in playerUI 
+	we have energy bar fo petro
+	canvas layer with back ground (add this not energy bar)
+in players
+	we have petro and frend add them in scenes
+	
+last important point to note 
+				when gate is added its lever should be added in the lever 
+				if u want to change the direction of platform you have to go to paths folder and change it
+				
+happy desgining!!
+

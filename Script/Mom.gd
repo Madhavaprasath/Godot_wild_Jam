@@ -1,5 +1,4 @@
 extends KinematicBody2D
-onready var object=get_parent().get_node("Object")
 onready var energy_bar=get_parent().get_node("CanvasLayer/TextureProgress")
 onready var animation_player=get_node("Dino/AnimationPlayer")
 var flying=false
@@ -27,7 +26,6 @@ signal improper_add
 
 
 func _ready():
-	#object.connect("landed",self,"die")
 	energy_bar.connect("val_fin",self,"_on_TextureProgress_val_fin")
 
 func _physics_process(delta):

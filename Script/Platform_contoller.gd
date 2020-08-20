@@ -13,8 +13,7 @@ func _ready():
 	platforms=get_node("platforms").get_children()
 	emit_signal("changed")
 func connected():
-	codefromlevers=""
-	for lever in levers:
+	codefromlevers=""	for lever in levers:
 		codefromlevers=lever.stater
 		print("hello")
 		print(codefromlevers)
