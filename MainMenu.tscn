@@ -1,0 +1,242 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://ui/theme1bit.tres" type="Theme" id=1]
+[ext_resource path="res://ui/button_theme.tres" type="Theme" id=2]
+[ext_resource path="res://ui/Rowdies/Rowdies-Light.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://ui/code/MainMenu.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/Maps/Map.tres" type="TileSet" id=5]
+[ext_resource path="res://Sprite/Player/DinoSpriteSheet_16x16.png" type="Texture" id=6]
+[ext_resource path="res://Sprite/Player/PteroSheet.png" type="Texture" id=7]
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 6 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 6 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 6 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 7 )
+region = Rect2( 16, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 7 )
+region = Rect2( 32, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 7 )
+region = Rect2( 48, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 7 )
+region = Rect2( 64, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 7 )
+region = Rect2( 80, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 7 )
+region = Rect2( 96, 32, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 100
+font_data = ExtResource( 3 )
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -2.11892
+margin_bottom = -2.1189
+theme = ExtResource( 1 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TileMap" type="TileMap" parent="."]
+z_index = 1
+tile_set = ExtResource( 5 )
+format = 1
+tile_data = PoolIntArray( 720905, 0, 0, 720906, 1, 0, 720907, 1, 0, 720908, 1, 0, 720909, 1, 0, 720910, 1, 0, 720911, 1, 0, 720912, 1, 0, 720913, 1, 0, 720914, 1, 0, 720915, 2, 0 )
+
+[node name="Players" type="Node2D" parent="."]
+
+[node name="Frend" type="AnimatedSprite" parent="Players"]
+position = Vector2( 640.355, 671.862 )
+scale = Vector2( 4, 4 )
+z_index = 1
+frames = SubResource( 7 )
+playing = true
+
+[node name="Ptero" type="AnimatedSprite" parent="Players"]
+position = Vector2( 1139.86, 530.158 )
+scale = Vector2( -4, 4 )
+z_index = 1
+frames = SubResource( 8 )
+frame = 2
+playing = true
+
+[node name="bar" type="PanelContainer" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -893.0
+margin_bottom = 4.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="bar"]
+margin_right = 1280.0
+margin_bottom = 897.0
+
+[node name="play" type="Button" parent="bar/Control"]
+margin_left = 84.0
+margin_top = 600.0
+margin_right = 281.0
+margin_bottom = 652.0
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 1 )
+text = "play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="about" type="Button" parent="bar/Control"]
+margin_left = 356.432
+margin_top = 681.077
+margin_right = 553.432
+margin_bottom = 733.077
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 1 )
+text = "about"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="tutorial" type="Button" parent="bar/Control"]
+margin_left = 84.0
+margin_top = 681.077
+margin_right = 281.0
+margin_bottom = 733.077
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 1 )
+text = "tutorial"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="exit" type="Button" parent="bar/Control"]
+margin_left = 84.0
+margin_top = 770.0
+margin_right = 281.0
+margin_bottom = 822.0
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 1 )
+text = "exit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="copyright" type="Label" parent="bar/Control"]
+margin_left = 809.0
+margin_top = 846.0
+margin_right = 1041.0
+margin_bottom = 881.0
+text = "Copyright 2020 all rights reserved "
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -175.782
+margin_top = -212.171
+margin_right = 172.218
+margin_bottom = -87.171
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Game"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="abouth" type="WindowDialog" parent="."]
+margin_left = 297.74
+margin_top = 359.963
+margin_right = 697.74
+margin_bottom = 632.963
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="abouth"]
+margin_left = 4.20453
+margin_top = 1.68179
+margin_right = 397.205
+margin_bottom = 270.682
+text = "                                             GAME
+is a game made by 
+	arydev,
+	JuanLr,
+	Kapden and 
+	Madhavaprasath
+
+Game is a puzle platformer game made in a week in GodotEngine
+for the GodotWildJam out 2 years
+is a game about a dinosaur 
+2 Friends one name is Ptero
+and another is Frend
+it uses 1bit graphichs 
+
+arydev ui
+Madhavaprasath programing
+juanLr art
+jiku music
+"
+[connection signal="pressed" from="bar/Control/about" to="." method="_on_about_pressed"]
