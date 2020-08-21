@@ -1,5 +1,6 @@
 extends Node2D
 
+export (PackedScene)var nextlevel 
 onready var petro=get_node("Ptero")
 onready var frend=get_node("frend")
 onready var frend_door_area=get_node("Doors/Area2D")
@@ -12,7 +13,6 @@ func _physics_process(delta):
 		$Timer.start()
 
 
-
-
 func _on_Timer_timeout():
 	set_physics_process(false)
+	get_tree().change_scene_to(nextlevel)
