@@ -34,7 +34,4 @@ position = Vector2( 658.618, 324.659 )
 [node name="Area2D2" parent="Doors" index="1"]
 position = Vector2( 192.467, 322.784 )
 
-[node name="petrodoor" parent="Doors/Area2D2" index="0"]
-frame = 0
-
 [editable path="Doors"]
