@@ -42,11 +42,9 @@ tile_data = PoolIntArray( 983036, 0, 0, 983037, 0, 0, 983038, 0, 0, 983039, 0, 0
 
 [node name="Ptero" parent="." instance=ExtResource( 7 )]
 position = Vector2( 16, 584 )
-Water = NodePath("../Water")
 
 [node name="frend" parent="." instance=ExtResource( 6 )]
 position = Vector2( 136, 592 )
-Water = NodePath("../Water")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 640, 448 )
