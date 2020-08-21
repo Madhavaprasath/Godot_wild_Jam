@@ -1,7 +1,8 @@
 extends TextureProgress
 
 signal val_fin
-onready var Petro = get_parent().get_parent().get_node("Ptero")
+onready var Petro = get_node(petropath)
+export (NodePath) var petropath 
 #siganling dino to stop if value is 0
 func _ready():
 	Petro.connect("flytimeadd",self,"_on_Mom_flytimeadd")

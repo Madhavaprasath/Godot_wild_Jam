@@ -1,5 +1,6 @@
 extends KinematicBody2D
-onready var energy_bar=get_parent().get_node("CanvasLayer/TextureProgress")
+onready var energy_bar=get_node(energybar_path)
+export (NodePath) var energybar_path
 onready var animation_player=get_node("Dino/AnimationPlayer")
 var flying=false
 onready var raycasts=get_node("Raycasts")
@@ -18,8 +19,8 @@ var value_flight
 var flytime
 var full_add=false
 var interia=100
-
-
+var dead=false
+export (int)var fly_speed=10
 signal flytimeischanging
 signal flytimeadd
 signal improper_add
@@ -28,23 +29,26 @@ signal improper_add
 
 func _ready():
 	energy_bar.connect("val_fin",self,"_on_TextureProgress_val_fin")
+	Global.connect("player_die",self,"die")
 func _physics_process(delta):
+
 	is_grounded=check_ground()
 	gets_input()
 	if flying==false:
 		velocity.y+=10
 		slide_count()
-		if velocity.y>0&&is_grounded==false:
-			animation_player.play("Land")
+	if velocity.y>0&&is_grounded==false:
+		animation_player.play("Land")
 		
-		velocity=move_and_slide_with_snap(velocity,Vector2.DOWN*64,Vector2.UP,false,4,PI/4,false)
+	velocity=move_and_slide_with_snap(velocity,Vector2.DOWN*64,Vector2.UP,false,4,PI/4,false)
 	flying()
 	if flying==true:
 		flying_velocity=move_and_slide(flying_velocity,up,false,4,PI/4,false)
 		emit_signal("flytimeischanging")
 
 func die():
-	queue_free()
+	dead=true
+	$Dino/AnimationPlayer.stop()
 	print("ahh hurts")
 
 func gets_input():
@@ -69,7 +73,7 @@ func flying():
 			
 	if flying==true:
 		var move_direction=int(Input.is_action_pressed("d"))-int(Input.is_action_pressed("a"))
-		flying_velocity.x=move_direction*250
+		flying_velocity.x=move_direction*fly_speed
 		animation_player.play("Fly")
 		if Input.is_action_pressed("w"):
 			flying_velocity.y=MAXFLYINGSPEED
