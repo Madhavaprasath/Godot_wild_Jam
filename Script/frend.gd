@@ -1,8 +1,7 @@
 extends KinematicBody2D
 
 
-onready var water=get_node(Water)
-export (NodePath) var Water
+
 
 export(int)var speed=200
 export(int)var max_speed=250
@@ -17,7 +16,7 @@ onready var animation_player=get_node("frendBody/AnimationPlayer")
 onready var raycasts=get_node("Raycast")
 
 func _ready():
-	water.connect("landed_frend",self,"die")
+	pass
 
 func move():
 	is_grounded=is_on_floor()

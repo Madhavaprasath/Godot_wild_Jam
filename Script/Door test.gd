@@ -8,9 +8,11 @@ var a=0
 func _physics_process(delta):
 	if frend_door_area.overlaps_body(frend)&&petro_door_area.overlaps_body(petro)&&a==0:
 		a=1
-		yield(get_tree().create_timer(1),"timeout")
 		print("levelup")
-		yield(get_tree().create_timer(1),"timeout")
-		a=0
-		pass
+		$Timer.start()
 
+
+
+
+func _on_Timer_timeout():
+	set_physics_process(false)

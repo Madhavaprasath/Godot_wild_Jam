@@ -3,8 +3,7 @@ onready var energy_bar=get_parent().get_node("CanvasLayer/TextureProgress")
 onready var animation_player=get_node("Dino/AnimationPlayer")
 var flying=false
 onready var raycasts=get_node("Raycasts")
-onready var water=get_node(Water)
-export (NodePath) var Water
+
 
 const MAXFLYINGSPEED=-200
 const MAXFLYINGDOWN=200 
@@ -29,7 +28,6 @@ signal improper_add
 
 func _ready():
 	energy_bar.connect("val_fin",self,"_on_TextureProgress_val_fin")
-	water.connect("landed_petro",self,"die")
 func _physics_process(delta):
 	is_grounded=check_ground()
 	gets_input()
