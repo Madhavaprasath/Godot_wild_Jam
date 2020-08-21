@@ -1,6 +1,8 @@
 extends KinematicBody2D
 
 
+onready var water=get_node(Water)
+export (NodePath) var Water
 
 export(int)var speed=200
 export(int)var max_speed=250
@@ -13,6 +15,10 @@ var is_grounded
 onready var body=get_node("frendBody")
 onready var animation_player=get_node("frendBody/AnimationPlayer")
 onready var raycasts=get_node("Raycast")
+
+func _ready():
+	water.connect("landed_frend",self,"die")
+
 func move():
 	is_grounded=is_on_floor()
 	
@@ -48,5 +54,10 @@ func slide_object():
 			collision.collider.apply_central_impulse(-collision.normal*inertia)
 func friction():
 	return 1 if is_on_floor()==true else 0.5
+
+
+func die():
+	queue_free()
+	print("ouch")
 
 

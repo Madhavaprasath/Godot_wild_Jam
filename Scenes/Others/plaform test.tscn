@@ -1,0 +1,62 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scenes/Objects/Platform_big.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Maps/Map.tres" type="TileSet" id=2]
+[ext_resource path="res://Scenes/Others/ScreenShake.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Objects/Object.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Player Ui/CanvasLayer.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Players/frend.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Players/Ptero.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Others/button.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Objects/Ball.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Objects/Platform_big.gd" type="Script" id=10]
+
+[node name="plaform test" type="Node2D"]
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 5 )]
+
+[node name="button" parent="." instance=ExtResource( 8 )]
+position = Vector2( 368, 576 )
+
+[node name="Platform_big" parent="." instance=ExtResource( 1 )]
+visible = false
+position = Vector2( 640, 640 )
+script = ExtResource( 10 )
+button1 = NodePath("../button")
+
+[node name="Ball" parent="." instance=ExtResource( 9 )]
+position = Vector2( 208, 584 )
+
+[node name="Water" parent="." instance=ExtResource( 4 )]
+position = Vector2( 488, 632 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="CollisionShape2D" parent="Water" index="1"]
+position = Vector2( 400, 60.0001 )
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2( 0.5, 0.5 )
+tile_set = ExtResource( 2 )
+format = 1
+tile_data = PoolIntArray( 983036, 0, 0, 983037, 0, 0, 983038, 0, 0, 983039, 0, 0, 1048572, 0, 0, 1048573, 0, 0, 1048574, 0, 0, 1048575, 0, 0, 1114108, 0, 0, 1114109, 0, 0, 1114110, 0, 0, 1114111, 0, 0, 1179644, 0, 0, 1179645, 0, 0, 1179646, 0, 0, 1179647, 0, 0, 1245180, 0, 0, 1245181, 0, 0, 1245182, 0, 0, 1245183, 0, 0, 1310716, 0, 0, 1310717, 0, 0, 1310718, 0, 0, 1310719, 0, 0, 1245184, 0, 0, 1245185, 0, 0, 1245186, 0, 0, 1245187, 0, 0, 1245188, 1, 0, 1245189, 1, 0, 1245190, 1, 0, 1245191, 1, 0, 1245192, 1, 0, 1245193, 1, 0, 1245194, 1, 0, 1245195, 1, 0, 1245196, 1, 0, 1245197, 1, 0, 1245198, 2, 0, 1245209, 0, 0, 1245210, 1, 0, 1245211, 1, 0, 1245212, 1, 0, 1245213, 1, 0, 1245214, 1, 0, 1245215, 1, 0, 1245216, 1, 0, 1245217, 1, 0, 1245218, 1, 0, 1245219, 1, 0, 1245220, 1, 0, 1245221, 1, 0, 1245222, 2, 0, 1376252, 0, 0, 1441788, 0, 0, 1507324, 0, 0, 1572897, 1, 0, 1835011, 2, 0 )
+
+[node name="Ptero" parent="." instance=ExtResource( 7 )]
+position = Vector2( 16, 584 )
+Water = NodePath("../Water")
+
+[node name="frend" parent="." instance=ExtResource( 6 )]
+position = Vector2( 136, 592 )
+Water = NodePath("../Water")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 640, 448 )
+current = true
+
+[node name="ScreenShake" parent="Camera2D" instance=ExtResource( 3 )]
+[connection signal="body_exited" from="button/Area2D" to="button" method="_on_Area2D_body_exited"]
+
+[editable path="button"]
+
+[editable path="Platform_big"]
+
+[editable path="Water"]

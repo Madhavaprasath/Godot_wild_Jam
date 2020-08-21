@@ -9,8 +9,8 @@ radius = 7.20711
 "Ball",
 ]]
 position = Vector2( 132.597, 45.1899 )
-collision_layer = 4
-collision_mask = 3
+collision_layer = 10
+collision_mask = 2147483653
 mass = 35.1561
 __meta__ = {
 "_edit_group_": true
