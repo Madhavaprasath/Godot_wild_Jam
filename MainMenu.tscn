@@ -1,0 +1,260 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://ui/code/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://Sprite/Player/DinoSpriteSheet_16x16.png" type="Texture" id=2]
+[ext_resource path="res://Sprite/Player/PteroSheet.png" type="Texture" id=3]
+[ext_resource path="res://ui/button_theme.tres" type="Theme" id=4]
+[ext_resource path="res://ui/theme1bit.tres" type="Theme" id=5]
+[ext_resource path="res://ui/Rowdies/Rowdies-Light.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Sprite/Dog_Iddle_16x16.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Objects/TileMap.tscn" type="PackedScene" id=8]
+
+[sub_resource type="DynamicFont" id=20]
+size = 30
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=21]
+size = 100
+font_data = ExtResource( 6 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 2 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 2 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 2 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=26]
+animations = [ {
+"frames": [ SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 3 )
+region = Rect2( 16, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 3 )
+region = Rect2( 32, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 3 )
+region = Rect2( 48, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 3 )
+region = Rect2( 64, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 3 )
+region = Rect2( 80, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 3 )
+region = Rect2( 96, 32, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=34]
+animations = [ {
+"frames": [ SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 7 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 7 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 7 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=35]
+animations = [ {
+"frames": [ SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 5 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bar" type="PanelContainer" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 3.0
+margin_top = -602.0
+theme = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="bar"]
+margin_right = 1021.0
+margin_bottom = 602.0
+
+[node name="play" type="Button" parent="bar/Control"]
+margin_left = 61.0
+margin_top = 314.0
+margin_right = 258.0
+margin_bottom = 366.0
+theme = ExtResource( 4 )
+custom_fonts/font = SubResource( 20 )
+text = "play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="about" type="Button" parent="bar/Control"]
+margin_left = 309.0
+margin_top = 402.0
+margin_right = 506.0
+margin_bottom = 454.0
+theme = ExtResource( 4 )
+custom_fonts/font = SubResource( 20 )
+text = "about"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="tutorial" type="Button" parent="bar/Control"]
+margin_left = 61.0
+margin_top = 402.0
+margin_right = 258.0
+margin_bottom = 454.0
+theme = ExtResource( 4 )
+custom_fonts/font = SubResource( 20 )
+text = "tutorial"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="exit" type="Button" parent="bar/Control"]
+margin_left = 61.0
+margin_top = 490.0
+margin_right = 258.0
+margin_bottom = 542.0
+theme = ExtResource( 4 )
+custom_fonts/font = SubResource( 20 )
+text = "exit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="copyright" type="Label" parent="bar/Control"]
+margin_left = 796.0
+margin_top = 202.0
+margin_right = 1012.0
+margin_bottom = 216.0
+text = "Copyright 2020 all rights reserved "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -175.782
+margin_top = -212.171
+margin_right = 172.218
+margin_bottom = -87.171
+theme = ExtResource( 5 )
+custom_fonts/font = SubResource( 21 )
+text = "Game"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="abouth" type="WindowDialog" parent="."]
+margin_left = 338.0
+margin_top = 129.0
+margin_right = 738.0
+margin_bottom = 402.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="abouth"]
+margin_left = 4.20453
+margin_top = 1.68179
+margin_right = 397.205
+margin_bottom = 270.682
+text = "                                             GAME
+is a game made by 
+	arydev,
+	JuanLr,
+	Jiku and 
+	Madhavaprasath
+
+Game is a puzle platformer game made in a week in GodotEngine
+for the GodotWildJam out 2 years
+is a game about a dinosaur mom and a son
+it uses 1bit graphichs 
+
+arydev ui
+Madhavaprasath programing
+juanLr art
+jiku music
+"
+
+[node name="TileMap" parent="." instance=ExtResource( 8 )]
+tile_data = PoolIntArray( 393224, 0, 0, 393225, 1, 0, 393226, 1, 0, 393227, 1, 0, 393228, 1, 0, 393229, 1, 0, 393230, 1, 0, 393231, 2, 0 )
+
+[node name="fremd" type="AnimatedSprite" parent="."]
+position = Vector2( 640, 368 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 26 )
+frame = 2
+playing = true
+
+[node name="ptero" type="AnimatedSprite" parent="."]
+position = Vector2( 864, 272 )
+scale = Vector2( -2.5, 2.5 )
+frames = SubResource( 34 )
+frame = 1
+playing = true
+
+[node name="pet" type="AnimatedSprite" parent="."]
+position = Vector2( 576, 376 )
+scale = Vector2( 1.25, 1.25 )
+frames = SubResource( 35 )
+frame = 2
+playing = true
+[connection signal="pressed" from="bar/Control/about" to="." method="_on_about_pressed"]
+[connection signal="pressed" from="bar/Control/tutorial" to="." method="_on_tutorial_pressed"]

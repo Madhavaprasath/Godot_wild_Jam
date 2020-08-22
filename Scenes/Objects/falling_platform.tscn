@@ -4,7 +4,7 @@
 [ext_resource path="res://falling_platform.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 31.3635, 3.67435 )
+extents = Vector2( 31.3635, 7.90051 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "shake"
@@ -25,7 +25,6 @@ tracks/0/keys = {
 [node name="falling_platform" type="KinematicBody2D"]
 scale = Vector2( 1.5, 1.25 )
 collision_layer = 2
-collision_mask = 4
 motion/sync_to_physics = true
 script = ExtResource( 2 )
 

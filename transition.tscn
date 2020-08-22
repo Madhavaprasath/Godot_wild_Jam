@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://shaders/masks/curtain.png" type="Texture" id=1]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+render_mode unshaded;
+
+uniform float cutt_off: hint_range(0.0,1.0);
+uniform float smooth_step: hint_range(0.0,1.0);
+uniform sampler2D mask : hint_albedo;
+void fragment(){
+	float value=texture(mask,UV).r;
+	float alpha = smoothstep(cutt_off,cutt_off+smooth_step,value*(1.0 - smooth_step)+smooth_step);
+	COLOR=vec4(COLOR.rgb,alpha);
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/cutt_off = 0.0
+shader_param/smooth_step = 0.543
+shader_param/mask = ExtResource( 1 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "fadeout"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:material:shader_param/cutt_off")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[node name="ColorRect" type="ColorRect"]
+material = SubResource( 2 )
+margin_right = 1032.0
+margin_bottom = 598.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/fadeout = SubResource( 3 )

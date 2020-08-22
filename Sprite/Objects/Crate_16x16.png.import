@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Dog_Iddle_16x16.png-931e75a9c51a529967510c42b461bf9e.stex"
+path="res://.import/Crate_16x16.png-4d924b8cabc593dcf7fa33363bc5b264.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprite/Dog_Iddle_16x16.png"
-dest_files=[ "res://.import/Dog_Iddle_16x16.png-931e75a9c51a529967510c42b461bf9e.stex" ]
+source_file="res://Sprite/Objects/Crate_16x16.png"
+dest_files=[ "res://.import/Crate_16x16.png-4d924b8cabc593dcf7fa33363bc5b264.stex" ]
 
 [params]
 

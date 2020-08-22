@@ -69,7 +69,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="CapsuleShape2D" id=5]
-radius = 4.87769
+radius = 3.85093
 height = 3.42523
 
 [node name="frend" type="KinematicBody2D"]
@@ -93,7 +93,7 @@ hframes = 10
 frame = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 1.11462, -0.0473852 )
+position = Vector2( -0.44612, 0.764199 )
 shape = SubResource( 5 )
 
 [node name="Raycast" type="Node2D" parent="."]

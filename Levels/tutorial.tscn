@@ -1,10 +1,14 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Objects/Lever.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Objects/Gate.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Objects/Ball.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Objects/falling_platform.tscn" type="PackedScene" id=5]
+[ext_resource path="res://crates.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Objects/Platform.tscn" type="PackedScene" id=7]
+[ext_resource path="res://falling_platform.tscn" type="PackedScene" id=8]
+[ext_resource path="res://MainMenu.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Open"
@@ -63,19 +67,41 @@ tracks/1/keys = {
 }
 
 [node name="level" instance=ExtResource( 1 )]
+nextlevel = ExtResource( 9 )
 
 [node name="TileMap" parent="." index="0"]
 scale = Vector2( 0.5, 0.5 )
-tile_data = PoolIntArray( -1, 3, 0, -65536, 3, 0, -65535, 3, 0, -65534, 3, 0, -65533, 3, 0, -65532, 3, 0, -65531, 3, 0, -65530, 3, 0, -65529, 3, 0, -65528, 3, 0, -65527, 3, 0, -65526, 3, 0, -65525, 3, 0, -65524, 3, 0, -65523, 3, 0, -65522, 3, 0, -65521, 3, 0, -65520, 3, 0, -65519, 3, 0, -65518, 3, 0, -65517, 3, 0, -65516, 3, 0, -65515, 3, 0, -65514, 3, 0, -65513, 3, 0, -65512, 3, 0, -65511, 3, 0, -65510, 3, 0, -65509, 3, 0, -65508, 3, 0, -65507, 3, 0, -65506, 3, 0, -65505, 3, 0, -65504, 3, 0, 65535, 3, 0, 32, 3, 0, 131071, 3, 0, 65568, 3, 0, 196607, 3, 0, 131104, 3, 0, 262143, 3, 0, 196640, 3, 0, 327679, 3, 0, 262155, 3, 0, 262156, 3, 0, 262157, 3, 0, 262158, 3, 0, 262159, 3, 0, 262160, 3, 0, 262161, 3, 0, 262162, 3, 0, 262163, 3, 0, 262164, 3, 0, 262176, 3, 0, 393215, 3, 0, 327691, 3, 0, 327700, 3, 0, 327712, 3, 0, 458751, 3, 0, 393227, 3, 0, 393236, 3, 0, 393248, 3, 0, 524287, 3, 0, 458784, 3, 0, 589823, 3, 0, 524299, 3, 0, 524300, 3, 0, 524301, 3, 0, 524302, 3, 0, 524303, 3, 0, 524304, 3, 0, 524305, 3, 0, 524306, 3, 0, 524307, 3, 0, 524308, 3, 0, 524309, 3, 0, 524310, 3, 0, 524311, 3, 0, 524312, 3, 0, 524313, 3, 0, 524314, 3, 0, 524320, 3, 0, 655359, 3, 0, 589839, 3, 0, 589856, 3, 0, 720895, 3, 0, 655375, 3, 0, 655388, 3, 0, 655389, 3, 0, 655390, 3, 0, 655392, 3, 0, 786431, 3, 0, 720911, 3, 0, 720917, 3, 0, 720918, 3, 0, 720922, 3, 0, 720928, 3, 0, 851967, 3, 0, 786447, 3, 0, 786451, 3, 0, 786452, 3, 0, 786457, 3, 0, 786464, 3, 0, 917503, 3, 0, 851983, 3, 0, 851984, 3, 0, 851985, 3, 0, 851986, 3, 0, 852000, 3, 0, 983039, 3, 0, 917519, 3, 0, 917527, 3, 0, 917528, 3, 0, 917529, 3, 0, 917530, 3, 0, 917536, 3, 0, 1048575, 3, 0, 983055, 3, 0, 983072, 3, 0, 1114111, 3, 0, 1048591, 3, 0, 1048596, 3, 0, 1048608, 3, 0, 1179647, 3, 0, 1114127, 3, 0, 1114132, 3, 0, 1114133, 3, 0, 1114134, 3, 0, 1114144, 3, 0, 1245183, 3, 0, 1179648, 3, 0, 1179649, 3, 0, 1179650, 3, 0, 1179651, 3, 0, 1179652, 3, 0, 1179653, 3, 0, 1179663, 3, 0, 1179671, 3, 0, 1179672, 3, 0, 1179673, 3, 0, 1179674, 3, 0, 1179675, 3, 0, 1179676, 3, 0, 1179677, 3, 0, 1179678, 3, 0, 1179679, 3, 0, 1179680, 3, 0 )
+tile_data = PoolIntArray( -1, 3, 0, -65536, 3, 0, -65535, 3, 0, -65534, 3, 0, -65533, 3, 0, -65532, 3, 0, -65531, 3, 0, -65530, 3, 0, -65529, 3, 0, -65528, 3, 0, -65527, 3, 0, -65526, 3, 0, -65525, 3, 0, -65524, 3, 0, -65523, 3, 0, -65522, 3, 0, -65521, 3, 0, -65520, 3, 0, -65519, 3, 0, -65518, 3, 0, -65517, 3, 0, -65516, 3, 0, -65515, 3, 0, -65514, 3, 0, -65513, 3, 0, -65512, 3, 0, -65511, 3, 0, -65510, 3, 0, -65509, 3, 0, -65508, 3, 0, -65507, 3, 0, -65506, 3, 0, -65505, 3, 0, -65504, 3, 0, 65535, 3, 0, 32, 3, 0, 131071, 3, 0, 65568, 3, 0, 196607, 3, 0, 131104, 3, 0, 262143, 3, 0, 196640, 3, 0, 327679, 3, 0, 262155, 3, 0, 262156, 3, 0, 262157, 3, 0, 262158, 3, 0, 262159, 3, 0, 262160, 3, 0, 262161, 3, 0, 262162, 3, 0, 262163, 3, 0, 262164, 3, 0, 262176, 3, 0, 393215, 3, 0, 327691, 3, 0, 327700, 3, 0, 327712, 3, 0, 458751, 3, 0, 393227, 3, 0, 393236, 3, 0, 393248, 3, 0, 524287, 3, 0, 458784, 3, 0, 589823, 3, 0, 524299, 3, 0, 524300, 3, 0, 524301, 3, 0, 524302, 3, 0, 524303, 3, 0, 524304, 3, 0, 524305, 3, 0, 524306, 3, 0, 524307, 3, 0, 524308, 3, 0, 524309, 3, 0, 524310, 3, 0, 524311, 3, 0, 524312, 3, 0, 524313, 3, 0, 524314, 3, 0, 524320, 3, 0, 655359, 3, 0, 589839, 3, 0, 589856, 3, 0, 720895, 3, 0, 655375, 3, 0, 655392, 3, 0, 786431, 3, 0, 720911, 3, 0, 720917, 3, 0, 720918, 3, 0, 720922, 3, 0, 720928, 3, 0, 851967, 3, 0, 786447, 3, 0, 786451, 3, 0, 786452, 3, 0, 786457, 3, 0, 786464, 3, 0, 917503, 3, 0, 851983, 3, 0, 851984, 3, 0, 851985, 3, 0, 851986, 3, 0, 851993, 0, 0, 852000, 3, 0, 983039, 3, 0, 917519, 3, 0, 917527, 3, 0, 917528, 3, 0, 917529, 3, 0, 917530, 3, 0, 917536, 3, 0, 1048575, 3, 0, 983055, 3, 0, 983062, 0, 0, 983072, 3, 0, 1114111, 3, 0, 1048591, 3, 0, 1048596, 3, 0, 1048608, 3, 0, 1179647, 3, 0, 1114127, 3, 0, 1114132, 3, 0, 1114133, 3, 0, 1114134, 3, 0, 1114144, 3, 0, 1245183, 3, 0, 1179648, 3, 0, 1179649, 3, 0, 1179650, 3, 0, 1179651, 3, 0, 1179652, 3, 0, 1179653, 3, 0, 1179663, 3, 0, 1179671, 3, 0, 1179672, 3, 0, 1179673, 3, 0, 1179674, 3, 0, 1179675, 3, 0, 1179676, 3, 0, 1179677, 3, 0, 1179678, 3, 0, 1179679, 3, 0, 1179680, 3, 0 )
 
-[node name="Ptero" parent="." index="2"]
-position = Vector2( 37.561, 554.121 )
-
-[node name="frend" parent="." index="3"]
-position = Vector2( 1002.25, 555.037 )
+[node name="Water" parent="." index="1"]
 scale = Vector2( 2, 2 )
+cell_size = Vector2( 16, 16 )
+tile_data = PoolIntArray( 1179654, 0, 0, 1179655, 0, 0, 1179656, 0, 0, 1179657, 0, 0, 1179658, 0, 0, 1179659, 0, 0, 1179660, 0, 0, 1179661, 0, 0, 1179662, 0, 0, 1179664, 0, 0, 1179665, 0, 0, 1179666, 0, 0, 1179667, 0, 0, 1179668, 0, 0, 1179669, 0, 0, 1179670, 0, 0 )
 
-[node name="Doors" parent="." index="4"]
+[node name="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer" index="0"]
+position = Vector2( 1034.36, 607.546 )
+scale = Vector2( 132.332, 159.629 )
+
+[node name="ColorRect" parent="CanvasLayer" index="3"]
+visible = false
+margin_left = -34.0
+margin_top = -30.0
+margin_right = 1058.0
+margin_bottom = 619.0
+
+[node name="timer" parent="CanvasLayer" index="7"]
+position = Vector2( 906.596, 7.66101 )
+
+[node name="Ptero" parent="." index="3"]
+position = Vector2( 493.867, 226.496 )
+
+[node name="frend" parent="." index="4"]
+position = Vector2( 853.521, 242.851 )
+scale = Vector2( 2, 2 )
+speed = 150
+jump_speed = 300
+
+[node name="Doors" parent="." index="5"]
 scale = Vector2( 0.5, 0.5 )
 
 [node name="Area2D" parent="Doors" index="0"]
@@ -87,11 +113,12 @@ position = Vector2( 873.235, 453.598 )
 [node name="labels" type="Node2D" parent="." index="6"]
 
 [node name="Label" type="Label" parent="labels" index="0"]
-margin_left = 380.891
+margin_left = 379.556
 margin_top = 161.036
-margin_right = 614.891
+margin_right = 613.556
 margin_bottom = 179.036
-text = "come to the doors to finish the level"
+text = "         come to the doors to 
+              finish the level"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -102,57 +129,82 @@ margin_top = 457.806
 margin_right = 164.389
 margin_bottom = 505.806
 text = "use a d to move 
-space to togle fly
-w to fly up and s down"
+"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label3" type="Label" parent="labels" index="2"]
-margin_left = 880.325
-margin_top = 371.625
-margin_right = 1022.33
-margin_bottom = 419.625
+margin_left = 888.302
+margin_top = 355.711
+margin_right = 1030.31
+margin_bottom = 403.711
 text = "use arrows  to move 
 arrow up to jump"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label4" type="Label" parent="labels" index="3"]
-margin_left = 249.325
-margin_top = 446.625
-margin_right = 391.325
-margin_bottom = 494.625
-text = "this is a folling platform
-touch it falls"
+[node name="Label7" type="Label" parent="labels" index="3"]
+margin_left = 863.829
+margin_top = 408.987
+margin_right = 1005.83
+margin_bottom = 456.987
+text = "push the crate using 
+arrow keys"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label5" type="Label" parent="labels" index="4"]
-margin_left = 711.325
-margin_top = 203.625
-margin_right = 862.325
-margin_bottom = 251.625
-text = "this are gates go on levers
+[node name="Label4" type="Label" parent="labels" index="4"]
+margin_left = 692.95
+margin_top = 89.009
+margin_right = 910.95
+margin_bottom = 137.009
+text = "This is a falling platform. 
+It will fall under Big Dino's weight!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="labels" index="5"]
+margin_left = 186.891
+margin_top = 201.506
+margin_right = 354.891
+margin_bottom = 249.506
+text = "these are gates go on levers
 activate to open the gate"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label6" type="Label" parent="labels" index="5"]
-margin_left = 734.325
-margin_top = 521.625
-margin_right = 902.325
-margin_bottom = 569.625
-text = "this is a rock"
+[node name="Label8" type="Label" parent="labels" index="6"]
+margin_left = 194.382
+margin_top = 3.72949
+margin_right = 611.382
+margin_bottom = 68.7295
+text = "<--This is how much time you can fly for. Land to rest and refill it.
+
+'Press Space to Fly
+Use WASD to move around'"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="labels" index="7"]
+margin_left = 614.38
+margin_top = 440.549
+margin_right = 782.38
+margin_bottom = 488.549
+text = "this is a rock push 
+it by jumping"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Ball" parent="." index="7" instance=ExtResource( 4 )]
-position = Vector2( 855.216, 547.919 )
+position = Vector2( 658.508, 492.497 )
+mass = 117.6
 
 [node name="falling_platform" parent="." index="8" instance=ExtResource( 5 )]
 position = Vector2( 322.295, 531.41 )
@@ -160,27 +212,63 @@ position = Vector2( 322.295, 531.41 )
 [node name="Gate" parent="." index="9" instance=ExtResource( 3 )]
 position = Vector2( 656.343, 238.411 )
 scale = Vector2( 1.6, 1.6 )
+code = "1"
 
 [node name="Lever" parent="Gate/levers" index="0" instance=ExtResource( 2 )]
-position = Vector2( -58.2652, 79.0607 )
+position = Vector2( -81.3372, 84.5622 )
+rotation = 1.5729
 Petro = NodePath("../../../Ptero")
 Frend = NodePath("../../../frend")
 
 [node name="Gate2" parent="." index="10" instance=ExtResource( 3 )]
 position = Vector2( 367.844, 239.825 )
 scale = Vector2( 1.6, 1.6 )
+code = "1"
 
 [node name="AnimationPlayer" parent="Gate2/sprites and animationplayer" index="2"]
 anims/Open = SubResource( 1 )
 anims/close = SubResource( 2 )
 
 [node name="Lever" parent="Gate2/levers" index="0" instance=ExtResource( 2 )]
-position = Vector2( -26.8934, 142.928 )
+position = Vector2( 62.4615, 112.984 )
+rotation = -1.5708
 Petro = NodePath("../../../Ptero")
 Frend = NodePath("../../../frend")
 
+[node name="crates" parent="." index="11" instance=ExtResource( 6 )]
+position = Vector2( 769.941, 424.786 )
+
+[node name="game over place" type="Area2D" parent="." index="13"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="game over place" index="0"]
+polygon = PoolVector2Array( 196.139, 607.523, 587.997, 610.046, 636.228, 607.523, 735.454, 609.205, 737.135, 577.251, 515.139, 573.887, 511.775, 606.682, 476.457, 603.318, 481.503, 583.137, 471.412, 574.728, 193.671, 584.012 )
+
+[node name="falling_platform2" parent="." index="14" instance=ExtResource( 8 )]
+position = Vector2( 781.001, 195.25 )
+
+[node name="CollisionShape2D" parent="falling_platform2" index="1"]
+position = Vector2( 0, -1.2 )
+
+[node name="Platform" parent="." index="15" instance=ExtResource( 7 )]
+position = Vector2( 947.895, 332.41 )
+scale = Vector2( 1.5, 1.5 )
+move_to = Vector2( 0, -130 )
+[connection signal="body_entered" from="game over place" to="." method="_on_game_over_place_body_entered"]
+
+[editable path="CanvasLayer"]
+
+[editable path="CanvasLayer/ColorRect"]
+
 [editable path="Doors"]
+
+[editable path="falling_platform"]
 
 [editable path="Gate"]
 
+[editable path="Gate/levers/Lever"]
+
 [editable path="Gate2"]
+
+[editable path="falling_platform2"]
+
+[editable path="Platform"]
