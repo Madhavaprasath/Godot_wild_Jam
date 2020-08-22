@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Script/frend.gd" type="Script" id=1]
 [ext_resource path="res://Sprite/Player/DinoSpriteSheet_16x16.png" type="Texture" id=2]
+[ext_resource path="res://8_21 sfx/Big Dino Jump Up.ogg" type="AudioStream" id=3]
+[ext_resource path="res://8_21 sfx/Dino Ground Pound.ogg" type="AudioStream" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Fall"
@@ -38,7 +40,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=3]
 resource_name = "Jump"
-length = 0.5
+length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -46,10 +48,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ 10, 11, 12, 13, 14 ]
+"values": [ 12, 13, 14 ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -69,7 +71,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="CapsuleShape2D" id=5]
-radius = 4.87769
+radius = 3.85093
 height = 3.42523
 
 [node name="frend" type="KinematicBody2D"]
@@ -93,26 +95,15 @@ hframes = 10
 frame = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 1.11462, -0.0473852 )
+position = Vector2( -0.401976, 0.896632 )
 shape = SubResource( 5 )
 
-[node name="Raycast" type="Node2D" parent="."]
+[node name="Audio" type="Node2D" parent="."]
 
-[node name="RayCast2D" type="RayCast2D" parent="Raycast"]
-position = Vector2( -2.60138, 6.00099 )
-scale = Vector2( 0.1, 0.1 )
-enabled = true
-cast_to = Vector2( 0, 12 )
-collision_mask = 3
+[node name="Jump" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource( 3 )
+volume_db = -20.0
 
-[node name="RayCast2D2" type="RayCast2D" parent="Raycast"]
-position = Vector2( 2.598, 6.001 )
-scale = Vector2( 0.1, 0.1 )
-enabled = true
-cast_to = Vector2( 0, 12 )
-
-[node name="RayCast2D3" type="RayCast2D" parent="Raycast"]
-position = Vector2( -0.371, 6.001 )
-scale = Vector2( 0.1, 0.1 )
-enabled = true
-cast_to = Vector2( 0, 12 )
+[node name="Fall" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource( 4 )
+volume_db = -20.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/Objects/Platform_big.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Maps/Map.tres" type="TileSet" id=2]
@@ -9,19 +9,21 @@
 [ext_resource path="res://Scenes/Players/Ptero.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Others/button.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Objects/Ball.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/Objects/Platform_big.gd" type="Script" id=10]
 
 [node name="plaform test" type="Node2D"]
 
 [node name="CanvasLayer" parent="." instance=ExtResource( 5 )]
 
+[node name="TextureProgress" parent="CanvasLayer" index="2"]
+petropath = NodePath("../../Ptero")
+levelpath = NodePath("../..")
+
 [node name="button" parent="." instance=ExtResource( 8 )]
 position = Vector2( 368, 576 )
 
 [node name="Platform_big" parent="." instance=ExtResource( 1 )]
-visible = false
 position = Vector2( 640, 640 )
-script = ExtResource( 10 )
+screen_shakepath = NodePath("../Camera2D/ScreenShake")
 button1 = NodePath("../button")
 
 [node name="Ball" parent="." instance=ExtResource( 9 )]
@@ -42,6 +44,7 @@ tile_data = PoolIntArray( 983036, 0, 0, 983037, 0, 0, 983038, 0, 0, 983039, 0, 0
 
 [node name="Ptero" parent="." instance=ExtResource( 7 )]
 position = Vector2( 16, 584 )
+energybar_path = NodePath("../CanvasLayer/TextureProgress")
 
 [node name="frend" parent="." instance=ExtResource( 6 )]
 position = Vector2( 136, 592 )
@@ -51,7 +54,8 @@ position = Vector2( 640, 448 )
 current = true
 
 [node name="ScreenShake" parent="Camera2D" instance=ExtResource( 3 )]
-[connection signal="body_exited" from="button/Area2D" to="button" method="_on_Area2D_body_exited"]
+
+[editable path="CanvasLayer"]
 
 [editable path="button"]
 

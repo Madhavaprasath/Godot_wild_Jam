@@ -7,7 +7,8 @@ onready var raycasts=get_node("Raycasts")
 
 
 const MAXFLYINGSPEED=-200
-const MAXFLYINGDOWN=200 
+const MAXFLYINGDOWN=100
+
 
 
 var a=1
@@ -18,7 +19,7 @@ var is_grounded
 var value_flight
 var flytime
 var full_add=false
-var interia=100
+export var interia=15
 var dead=false
 export (int)var fly_speed=10
 signal flytimeischanging
@@ -30,21 +31,22 @@ signal improper_add
 func _ready():
 	energy_bar.connect("val_fin",self,"_on_TextureProgress_val_fin")
 	Global.connect("player_die",self,"die")
+	Global.connect("frend_die",self,"die")
 func _physics_process(delta):
-
-	is_grounded=check_ground()
-	gets_input()
-	if flying==false:
-		velocity.y+=10
-		slide_count()
-	if velocity.y>0&&is_grounded==false:
-		animation_player.play("Land")
-		
-	velocity=move_and_slide_with_snap(velocity,Vector2.DOWN*64,Vector2.UP,false,4,PI/4,false)
-	flying()
-	if flying==true:
-		flying_velocity=move_and_slide(flying_velocity,up,false,4,PI/4,false)
-		emit_signal("flytimeischanging")
+	if dead==false:
+		is_grounded=check_ground()
+		gets_input()
+		if flying==false:
+			velocity.y+=10
+			slide_count()
+		if velocity.y>0&&is_grounded==false:
+			animation_player.play("Land")
+			
+		velocity=move_and_slide_with_snap(velocity,Vector2.DOWN*64,Vector2.UP,false,4,PI/4,false)
+		flying()
+		if flying==true:
+			flying_velocity=move_and_slide(flying_velocity,Vector2.UP,false,4,PI/4,false)
+			emit_signal("flytimeischanging")
 
 func die():
 	dead=true
@@ -77,10 +79,15 @@ func flying():
 		animation_player.play("Fly")
 		if Input.is_action_pressed("w"):
 			flying_velocity.y=MAXFLYINGSPEED
+		elif Input.is_action_just_released("w"):
+			flying_velocity.y=50
+		elif Input .is_action_just_released("s"):
+			flying_velocity.y=50
 		elif Input.is_action_pressed("s"):
 				flying_velocity.y=MAXFLYINGDOWN
 		else:
-			flying_velocity.y=50
+			
+			flying_velocity.y=25
 	elif flying==false:
 		flying_velocity.y+=10 
 		if energy_bar.value==0&&full_add==true:
@@ -101,7 +108,7 @@ func slide_count():
 	for index in get_slide_count():
 		var collision=get_slide_collision(index)
 		if collision.collider.is_in_group("Ball"):
-			collision.collider.apply_central_impulse(-collision.normal*interia*0)
+			collision.collider.apply_central_impulse(-collision.normal*interia*0.5)
 
 func _on_TextureProgress_val_fin():
 	flying=false

@@ -1,0 +1,66 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://ui/font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://ui/button_theme.tres" type="Theme" id=2]
+
+[node name="Tryagain" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 4.24268
+margin_top = 1.41422
+margin_right = 1027.24
+margin_bottom = 596.414
+color = Color( 1, 1, 1, 0.635294 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 367.05
+margin_top = 14.2544
+margin_right = 423.05
+margin_bottom = 28.2544
+custom_fonts/font = ExtResource( 1 )
+text = "Try again "
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 314.918
+margin_top = 142.914
+margin_right = 714.918
+margin_bottom = 205.914
+custom_fonts/font = ExtResource( 1 )
+text = "You can make it "
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="restart" type="Button" parent="."]
+margin_left = 376.544
+margin_top = 255.757
+margin_right = 606.544
+margin_bottom = 358.757
+theme = ExtResource( 2 )
+custom_fonts/font = ExtResource( 1 )
+text = "Restart"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit" type="Button" parent="."]
+margin_left = 382.201
+margin_top = 450.919
+margin_right = 612.201
+margin_bottom = 553.919
+theme = ExtResource( 2 )
+custom_fonts/font = ExtResource( 1 )
+text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}

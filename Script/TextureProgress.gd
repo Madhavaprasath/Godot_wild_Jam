@@ -4,7 +4,10 @@ signal val_fin
 onready var Petro = get_node(petropath)
 export (NodePath) var petropath 
 #siganling dino to stop if value is 0
+onready var level=get_node(levelpath)
+export (NodePath) var levelpath
 func _ready():
+	level.connect("level_up",self,"die")
 	Petro.connect("flytimeadd",self,"_on_Mom_flytimeadd")
 	Petro.connect("flytimeischanging",self,"_on_Mom_flytimeischanging")
 	Petro.connect("improper_add",self,"_on_Mom_improper_add")
@@ -23,5 +26,6 @@ func _on_Mom_improper_add():
 		yield(get_tree().create_timer(1),"timeout")
 		value+=0.5
 
-
+func die():
+	pass
 

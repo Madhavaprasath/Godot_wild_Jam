@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Little Dino Flying Activate.ogg-46198cc66e54a9ede28aa095c1eb5d4d.oggstr"
+
+[deps]
+
+source_file="res://8_21 sfx/Little Dino Flying Activate.ogg"
+dest_files=[ "res://.import/Little Dino Flying Activate.ogg-46198cc66e54a9ede28aa095c1eb5d4d.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

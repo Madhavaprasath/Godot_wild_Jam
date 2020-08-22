@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Big Dino Door.ogg-18f501933db27eee72a5ed23014f1053.oggstr"
+
+[deps]
+
+source_file="res://8_21 sfx/Big Dino Door.ogg"
+dest_files=[ "res://.import/Big Dino Door.ogg-18f501933db27eee72a5ed23014f1053.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

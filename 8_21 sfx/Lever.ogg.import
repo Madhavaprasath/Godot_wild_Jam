@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Lever.ogg-da2657dea43ea3e1f7daca71b7fbadc6.oggstr"
+
+[deps]
+
+source_file="res://8_21 sfx/Lever.ogg"
+dest_files=[ "res://.import/Lever.ogg-da2657dea43ea3e1f7daca71b7fbadc6.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

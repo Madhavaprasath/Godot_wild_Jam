@@ -15,5 +15,7 @@ func platform_lever_changed():
 	
 func petro_die():
 	emit_signal("player_die")
+	emit_signal("frend_die")
 func frend_die():
 	emit_signal("frend_die")
+	emit_signal("player_die")

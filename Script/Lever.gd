@@ -44,7 +44,7 @@ func _physics_process(delta):
 				not_presed=false
 				alredy_pressed=1
 			Global.lever_changed()
-	
+			$Lever.play()
 	if $Area2D.overlaps_body(frend)&&Input.is_action_pressed("cntrl"):
 		if state=="0"&&alredy_pressed_frend==1:
 			alredy_pressed_frend=3
@@ -75,6 +75,7 @@ func _physics_process(delta):
 			not_presed=false
 			alredy_pressed_frend=1
 		Global.lever_changed()
+		$Lever.play()
 	if Invert_this==true:
 		if $Area2D.overlaps_body(petro)&&Input.is_action_pressed("e"):
 			if state=="0"&&alredy_pressed==1:
@@ -106,6 +107,8 @@ func _physics_process(delta):
 				not_presed=false
 				alredy_pressed=1
 			Global.lever_changed()
+			$Lever.play()
+
 	
 	if $Area2D.overlaps_body(frend)&&Input.is_action_pressed("cntrl"):
 		if state=="0"&&alredy_pressed_frend==1:
@@ -137,3 +140,4 @@ func _physics_process(delta):
 			not_presed=false
 			alredy_pressed_frend=1
 		Global.lever_changed()
+		$Lever.play()

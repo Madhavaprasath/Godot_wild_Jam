@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Big Dino Jump Up.ogg-3731f34c1b06ab5314dbe2585f2f344b.oggstr"
+
+[deps]
+
+source_file="res://8_21 sfx/Big Dino Jump Up.ogg"
+dest_files=[ "res://.import/Big Dino Jump Up.ogg-3731f34c1b06ab5314dbe2585f2f344b.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

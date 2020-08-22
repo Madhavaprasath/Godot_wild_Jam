@@ -1,0 +1,189 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Levels/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://crates.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Objects/falling_platform.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Objects/Lever.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Objects/Gate.tscn" type="PackedScene" id=5]
+[ext_resource path="res://antiflypetro.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Objects/Platformfinal.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Objects/Ball.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Sprite/Objects/Platform_13x48.png" type="Texture" id=9]
+[ext_resource path="res://Scenes/Objects/Platform_big.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Others/button.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Sprite/Objects/Platform_16x48.png" type="Texture" id=12]
+[ext_resource path="res://game over place.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Others/ScreenShake.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Levels/Level-3.tscn" type="PackedScene" id=15]
+
+[node name="level" instance=ExtResource( 1 )]
+nextlevel = ExtResource( 15 )
+
+[node name="TileMap" parent="." index="0"]
+scale = Vector2( 0.5, 0.5 )
+tile_data = PoolIntArray( 65536, 1, 0, 65537, 1, 0, 65538, 1, 0, 65539, 1, 0, 65540, 1, 0, 65541, 1, 0, 65542, 1, 0, 65543, 1, 0, 65544, 1, 0, 65545, 1, 0, 65546, 1, 0, 65547, 1, 0, 65548, 1, 0, 65549, 1, 0, 65550, 1, 0, 65551, 1, 0, 65552, 1, 0, 65553, 1, 0, 65554, 1, 0, 65555, 1, 0, 65556, 1, 0, 65557, 1, 0, 65558, 1, 0, 65559, 1, 0, 65560, 1, 0, 65561, 1, 0, 65562, 1, 0, 65563, 1, 0, 65564, 1, 0, 65565, 1, 0, 65566, 1, 0, 65567, 1, 0, 131072, 1, 0, 131084, 0, 0, 131103, 1, 0, 196608, 1, 0, 196620, 0, 0, 196639, 1, 0, 262144, 1, 0, 262156, 1, 0, 262161, 1, 0, 262162, 1, 0, 262163, 1, 0, 262164, 1, 0, 262175, 1, 0, 327680, 1, 0, 327692, 1, 0, 327697, 1, 0, 327711, 1, 0, 393216, 1, 0, 393228, 0, 0, 393229, 1, 0, 393230, 1, 0, 393231, 1, 0, 393232, 1, 0, 393233, 1, 0, 393247, 1, 0, 458752, 1, 0, 458783, 1, 0, 524288, 1, 0, 524319, 1, 0, 589824, 1, 0, 589844, 1, 0, 589851, 1, 0, 589852, 1, 0, 589853, 1, 0, 589854, 1, 0, 589855, 1, 0, 655360, 1, 0, 655391, 1, 0, 720896, 1, 0, 720927, 1, 0, 786432, 1, 0, 786463, 1, 0, 851968, 1, 0, 851988, 1, 0, 851989, 1, 0, 851990, 1, 0, 851991, 1, 0, 851992, 1, 0, 851993, 1, 0, 851994, 1, 0, 851995, 1, 0, 851996, 1, 0, 851997, 1, 0, 851998, 1, 0, 851999, 1, 0, 917504, 1, 0, 917535, 1, 0, 983040, 1, 0, 983071, 1, 0, 1048576, 1, 0, 1048607, 1, 0, 1114112, 1, 0, 1114143, 1, 0, 1179648, 1, 0, 1179653, 1, 0, 1179654, 1, 0, 1179655, 1, 0, 1179656, 1, 0, 1179657, 1, 0, 1179658, 1, 0, 1179659, 1, 0, 1179660, 1, 0, 1179661, 1, 0, 1179662, 1, 0, 1179663, 1, 0, 1179664, 1, 0, 1179665, 1, 0, 1179666, 1, 0, 1179667, 1, 0, 1179668, 1, 0, 1179669, 1, 0, 1179670, 1, 0, 1179671, 1, 0, 1179672, 1, 0, 1179673, 1, 0, 1179674, 1, 0, 1179675, 1, 0, 1179676, 1, 0, 1179677, 1, 0, 1179678, 1, 0, 1179679, 1, 0 )
+
+[node name="Water" parent="." index="1"]
+scale = Vector2( 2, 2 )
+cell_size = Vector2( 16, 16 )
+tile_data = PoolIntArray( 1179649, 0, 0, 1179650, 0, 0, 1179651, 0, 0, 1179652, 0, 0 )
+
+[node name="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer" index="0"]
+position = Vector2( 1031.66, 646.589 )
+
+[node name="ColorRect" parent="CanvasLayer" index="3"]
+visible = true
+
+[node name="timer" parent="CanvasLayer" index="7"]
+position = Vector2( 853.915, -15.0762 )
+
+[node name="Ptero" parent="." index="3"]
+position = Vector2( 677.844, 369.027 )
+interia = 25
+
+[node name="frend" parent="." index="4"]
+position = Vector2( 814.175, 554.811 )
+
+[node name="Doors" parent="." index="5"]
+position = Vector2( -176, 0 )
+
+[node name="Area2D" parent="Doors" index="0"]
+position = Vector2( 660.74, 121.719 )
+
+[node name="frenddoor" parent="Doors/Area2D" index="0"]
+position = Vector2( 1.34097, 7.07107 )
+scale = Vector2( 1, 1 )
+
+[node name="CollisionShape2D" parent="Doors/Area2D" index="1"]
+position = Vector2( 1.38267, 13.1713 )
+
+[node name="AudioStreamPlayer2D" parent="Doors/Area2D" index="3"]
+position = Vector2( 0, -0.176773 )
+
+[node name="Area2D2" parent="Doors" index="1"]
+position = Vector2( 752, 96 )
+
+[node name="petrodoor" parent="Doors/Area2D2" index="0"]
+scale = Vector2( 0.75, 0.75 )
+
+[node name="CollisionShape2D" parent="Doors/Area2D2" index="3"]
+position = Vector2( 0.297318, 3.61161 )
+
+[node name="crates" parent="." index="7" instance=ExtResource( 2 )]
+position = Vector2( 181.224, 543.672 )
+collision_layer = 8
+collision_mask = 5
+
+[node name="falling_platform" parent="." index="8" instance=ExtResource( 3 )]
+position = Vector2( 86.8365, 483.264 )
+
+[node name="falling_platform2" parent="." index="9" instance=ExtResource( 3 )]
+position = Vector2( 217.091, 420.968 )
+
+[node name="falling_platform3" parent="." index="10" instance=ExtResource( 3 )]
+position = Vector2( 79.2854, 337.907 )
+
+[node name="falling_platform4" parent="." index="11" instance=ExtResource( 3 )]
+position = Vector2( 218.979, 258.622 )
+
+[node name="falling_platform5" parent="." index="12" instance=ExtResource( 3 )]
+position = Vector2( 86.9769, 207.486 )
+
+[node name="falling_platform6" parent="." index="13" instance=ExtResource( 3 )]
+position = Vector2( 213.494, 125.163 )
+
+[node name="falling_platform7" parent="." index="14" instance=ExtResource( 3 )]
+position = Vector2( 488, 448 )
+
+[node name="falling_platform8" parent="." index="15" instance=ExtResource( 3 )]
+position = Vector2( 496, 336 )
+
+[node name="antiflypetro" parent="." index="16" instance=ExtResource( 6 )]
+visible = false
+
+[node name="Gate" parent="." index="17" instance=ExtResource( 5 )]
+position = Vector2( 637.834, 95.8553 )
+rotation = -3.14159
+scale = Vector2( -3.2, -3.2 )
+code = "1"
+
+[node name="levers" parent="Gate" index="2"]
+position = Vector2( -0.568695, 1.14441e-05 )
+
+[node name="Lever" parent="Gate/levers" index="0" instance=ExtResource( 4 )]
+position = Vector2( -185.137, 3.35567 )
+rotation = 1.5708
+scale = Vector2( 1, 1 )
+Petro = NodePath("../../../Ptero")
+Frend = NodePath("../../../frend")
+
+[node name="Platform_big" parent="." index="18" instance=ExtResource( 10 )]
+position = Vector2( 766.37, 305.591 )
+scale = Vector2( 0.75, 0.75 )
+screen_shake1 = NodePath("../Camera2D/ScreenShake")
+button1 = NodePath("../button")
+
+[node name="Sprite" parent="Platform_big/KinematicBody2D" index="0"]
+position = Vector2( 2.4972, 0.00456381 )
+scale = Vector2( 5.2694, 2.46907 )
+texture = ExtResource( 9 )
+
+[node name="Platform" parent="." index="19" instance=ExtResource( 7 )]
+position = Vector2( 592, 472 )
+
+[node name="KinematicBody2D" parent="Platform" index="0"]
+position = Vector2( -5.17847, 44.4749 )
+scale = Vector2( 1, 1 )
+collision_mask = 12
+
+[node name="CollisionShape2D" parent="Platform/KinematicBody2D" index="1"]
+one_way_collision = false
+
+[node name="Path2D" parent="Platform" index="1"]
+position = Vector2( -3.1748, 48.892 )
+
+[node name="PathFollow2D" parent="Platform/Path2D" index="0"]
+position = Vector2( -2.00366, -4.41708 )
+
+[node name="Ball" parent="." index="20" instance=ExtResource( 8 )]
+position = Vector2( 765.354, 384.579 )
+z_index = 2
+mass = 89.9133
+
+[node name="button" parent="." index="21" instance=ExtResource( 11 )]
+position = Vector2( 960.642, 410.901 )
+z_index = -1
+
+[node name="Sprite" parent="button/Area2D" index="0"]
+texture = ExtResource( 12 )
+
+[node name="CollisionShape2D" parent="button/Area2D" index="1"]
+position = Vector2( 0, -1.88986 )
+
+[node name="Camera2D" type="Camera2D" parent="." index="22"]
+position = Vector2( 510, 300 )
+current = true
+
+[node name="ScreenShake" parent="Camera2D" index="0" instance=ExtResource( 14 )]
+
+[node name="game over place" parent="." index="23" instance=ExtResource( 13 )]
+
+[node name="CollisionPolygon2D" parent="game over place" index="0"]
+polygon = PoolVector2Array( 33.2883, 586.474, 33.2883, 606.678, 152.269, 607.24, 160.127, 591.525, 100.636, 587.596 )
+[connection signal="body_entered" from="game over place" to="." method="_on_game_over_place_body_entered"]
+
+[editable path="CanvasLayer"]
+
+[editable path="Doors"]
+
+[editable path="falling_platform"]
+
+[editable path="Gate"]
+
+[editable path="Platform_big"]
+
+[editable path="Platform"]
+
+[editable path="button"]
+
+[editable path="game over place"]

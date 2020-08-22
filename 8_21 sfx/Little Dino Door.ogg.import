@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Little Dino Door.ogg-10f2face62f582c385ce5f184dbe63cc.oggstr"
+
+[deps]
+
+source_file="res://8_21 sfx/Little Dino Door.ogg"
+dest_files=[ "res://.import/Little Dino Door.ogg-10f2face62f582c385ce5f184dbe63cc.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
